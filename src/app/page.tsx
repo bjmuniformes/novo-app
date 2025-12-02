@@ -5,16 +5,16 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  Star, 
-  Users, 
-  Award, 
-  Shirt, 
-  Gift, 
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Star,
+  Users,
+  Award,
+  Shirt,
+  Gift,
   CheckCircle,
   MessageCircle,
   ArrowRight,
@@ -27,11 +27,11 @@ export default function Home() {
   const [activeProduct, setActiveProduct] = useState('uniformes')
 
   const handleWhatsAppContact = (product?: string) => {
-    const message = product 
+    const message = product
       ? `Olá! Tenho interesse em ${product}. Gostaria de mais informações.`
       : 'Olá! Gostaria de conhecer mais sobre os produtos da empresa.'
-    
-    const whatsappUrl = `https://wa.me/+5524992729808?text=${encodeURIComponent(message)}`
+
+    const whatsappUrl = `https://wa.me/+5524927530028?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
 
@@ -83,12 +83,12 @@ export default function Home() {
       <header className="bg-white shadow-lg sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <img 
-              src="https://k6hrqrxuu8obbfwn.public.blob.vercel-storage.com/temp/8846cd06-7677-4d5d-ae97-6b6041c7589a.png" 
-              alt="BJM Logo" 
+            <img
+              src="https://k6hrqrxuu8obbfwn.public.blob.vercel-storage.com/temp/8846cd06-7677-4d5d-ae97-6b6041c7589a.png"
+              alt="BJM Logo"
               className="h-12 w-auto"
             />
-            <Button 
+            <Button
               onClick={() => window.open('https://wa.me/+5524992729808', '_blank')}
               className="bg-green-600 hover:bg-green-700 text-white"
             >
@@ -108,20 +108,20 @@ export default function Home() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700"> Personalizados</span>
             </h2>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Há mais de 15 anos criando identidade visual para empresas através de uniformes profissionais 
+              Há mais de 15 anos criando identidade visual para empresas através de uniformes profissionais
               e brindes personalizados de alta qualidade. Sua marca merece o melhor!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 onClick={() => window.open('https://wa.me/+5524992729808', '_blank')}
                 className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white px-8 py-3"
               >
                 Solicitar Orçamento
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="outline"
                 onClick={() => document.getElementById('produtos')?.scrollIntoView({ behavior: 'smooth' })}
                 className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3"
@@ -173,11 +173,10 @@ export default function Home() {
               <Button
                 variant={activeProduct === 'uniformes' ? 'default' : 'ghost'}
                 onClick={() => setActiveProduct('uniformes')}
-                className={`rounded-full px-6 py-2 ${
-                  activeProduct === 'uniformes' 
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-700 text-white' 
+                className={`rounded-full px-6 py-2 ${activeProduct === 'uniformes'
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-700 text-white'
                     : 'text-gray-600 hover:text-blue-600'
-                }`}
+                  }`}
               >
                 <Shirt className="w-4 h-4 mr-2" />
                 Uniformes
@@ -185,11 +184,10 @@ export default function Home() {
               <Button
                 variant={activeProduct === 'brindes' ? 'default' : 'ghost'}
                 onClick={() => setActiveProduct('brindes')}
-                className={`rounded-full px-6 py-2 ${
-                  activeProduct === 'brindes' 
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-700 text-white' 
+                className={`rounded-full px-6 py-2 ${activeProduct === 'brindes'
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-700 text-white'
                     : 'text-gray-600 hover:text-blue-600'
-                }
+                  }
                 `}
               >
                 <Gift className="w-4 h-4 mr-2" />
@@ -203,8 +201,8 @@ export default function Home() {
             {(activeProduct === 'uniformes' ? uniformes : brindes).map((product, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                 <div className="relative bg-white">
-                  <img 
-                    src={product.image} 
+                  <img
+                    src={product.image}
                     alt={product.name}
                     className="w-full h-48 object-cover"
                   />
@@ -227,7 +225,7 @@ export default function Home() {
                       </div>
                     ))}
                   </div>
-                  <a 
+                  <a
                     href="https://wa.me/+5524992729808"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -256,7 +254,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <img 
+                <img
                   src="https://k6hrqrxuu8obbfwn.public.blob.vercel-storage.com/temp/d7952a95-1ae9-4a50-96ee-6846f4e5fba7.jpg"
                   alt="Nossa empresa"
                   className="rounded-2xl shadow-2xl"
@@ -266,11 +264,11 @@ export default function Home() {
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">Desde 2009</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    A BJM nasceu da paixão por criar identidade visual através de uniformes e brindes personalizados. 
+                    A BJM nasceu da paixão por criar identidade visual através de uniformes e brindes personalizados.
                     Começamos como uma pequena empresa familiar e hoje somos referência no mercado.
                   </p>
                 </div>
-                
+
                 <div className="grid grid-cols-3 gap-4">
                   <div className="text-center p-4 bg-blue-50 rounded-lg">
                     <Heart className="w-8 h-8 text-blue-600 mx-auto mb-2" />
@@ -289,7 +287,7 @@ export default function Home() {
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Nossa Missão</h4>
                   <p className="text-gray-600">
-                    Fortalecer a identidade visual das empresas através de uniformes e brindes personalizados 
+                    Fortalecer a identidade visual das empresas através de uniformes e brindes personalizados
                     de alta qualidade, sempre com foco na satisfação do cliente e prazos de entrega.
                   </p>
                 </div>
@@ -305,7 +303,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">Entre em Contato</h2>
             <p className="text-xl mb-12 opacity-90">
-              Pronto para personalizar os uniformes e brindes da sua empresa? 
+              Pronto para personalizar os uniformes e brindes da sua empresa?
               Fale conosco e solicite seu orçamento!
             </p>
 
@@ -317,7 +315,7 @@ export default function Home() {
                   <p>(24) 99272-9808</p>
                 </CardContent>
               </Card>
-              
+
               <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white">
                 <CardContent className="p-6 text-center">
                   <Mail className="w-8 h-8 mx-auto mb-4" />
@@ -325,7 +323,7 @@ export default function Home() {
                   <p>bjmuniformes@gmail.com</p>
                 </CardContent>
               </Card>
-              
+
               <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white">
                 <CardContent className="p-6 text-center">
                   <Clock className="w-8 h-8 mx-auto mb-4" />
@@ -335,7 +333,7 @@ export default function Home() {
               </Card>
             </div>
 
-            <a 
+            <a
               href="https://wa.me/+5524992729808"
               target="_blank"
               rel="noopener noreferrer"
@@ -354,9 +352,9 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
               <div>
-                <img 
-                  src="https://k6hrqrxuu8obbfwn.public.blob.vercel-storage.com/temp/9f850066-49b2-4e3b-997a-47c0574360b9.png" 
-                  alt="BJM Logo" 
+                <img
+                  src="https://k6hrqrxuu8obbfwn.public.blob.vercel-storage.com/temp/9f850066-49b2-4e3b-997a-47c0574360b9.png"
+                  alt="BJM Logo"
                   className="h-8 w-auto"
                 />
                 <p className="text-sm text-gray-400">Uniformes & Brindes Personalizados</p>
