@@ -23,6 +23,7 @@ import {
   Zap
 } from 'lucide-react'
 
+
 export default function Home() {
   const [activeProduct, setActiveProduct] = useState('uniformes')
 
@@ -31,7 +32,7 @@ export default function Home() {
       ? `Olá! Tenho interesse em ${product}. Gostaria de mais informações.`
       : 'Olá! Gostaria de conhecer mais sobre os produtos da empresa.'
 
-    const whatsappUrl = `https://wa.me/+5524927530028?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/${PHONENUMBER}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
 
@@ -89,7 +90,7 @@ export default function Home() {
               className="h-12 w-auto"
             />
             <Button
-              onClick={() => window.open('https://wa.me/+5524992729808', '_blank')}
+              onClick={() => window.open(`https://wa.me/${PHONENUMBER}`, '_blank')}
               className="bg-green-600 hover:bg-green-700 text-white"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
@@ -114,7 +115,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                onClick={() => window.open('https://wa.me/+5524992729808', '_blank')}
+                onClick={() => window.open(`https://wa.me/${PHONENUMBER}`, '_blank')}
                 className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white px-8 py-3"
               >
                 Solicitar Orçamento
@@ -174,8 +175,8 @@ export default function Home() {
                 variant={activeProduct === 'uniformes' ? 'default' : 'ghost'}
                 onClick={() => setActiveProduct('uniformes')}
                 className={`rounded-full px-6 py-2 ${activeProduct === 'uniformes'
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-700 text-white'
-                    : 'text-gray-600 hover:text-blue-600'
+                  ? 'bg-gradient-to-r from-blue-600 to-indigo-700 text-white'
+                  : 'text-gray-600 hover:text-blue-600'
                   }`}
               >
                 <Shirt className="w-4 h-4 mr-2" />
@@ -185,8 +186,8 @@ export default function Home() {
                 variant={activeProduct === 'brindes' ? 'default' : 'ghost'}
                 onClick={() => setActiveProduct('brindes')}
                 className={`rounded-full px-6 py-2 ${activeProduct === 'brindes'
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-700 text-white'
-                    : 'text-gray-600 hover:text-blue-600'
+                  ? 'bg-gradient-to-r from-blue-600 to-indigo-700 text-white'
+                  : 'text-gray-600 hover:text-blue-600'
                   }
                 `}
               >
@@ -226,7 +227,7 @@ export default function Home() {
                     ))}
                   </div>
                   <a
-                    href="https://wa.me/+5524992729808"
+                    href={`https://wa.me/${PHONENUMBER}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3 w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white"
@@ -334,7 +335,7 @@ export default function Home() {
             </div>
 
             <a
-              href="https://wa.me/+5524992729808"
+              href={`https://wa.me/${PHONENUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs h-10 rounded-md has-[>svg]:px-4 bg-green-600 hover:bg-green-700 text-white px-12 py-4 text-lg"
