@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Criado com a Lasy",
-  description: "Projeto criado com Lasy AI",
+  title: "BJM Uniformes",
+  description: "Há mais de 15 anos criando identidade visual para empresas através de uniformes profissionais e brindes personalizados de alta qualidade. Sua marca merece o melhor!",
 };
 
 export default function RootLayout({
